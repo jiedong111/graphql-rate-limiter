@@ -21,6 +21,12 @@ interface StoreState {
   // boolean to check matched passwords
   passMatch: Boolean;
   setPassMatch: (status: boolean) => void;
+
+  // socketIo test message
+  message: String;
+  setMessage: (message: string) => void;
+  messageReceived: String;
+  setMessageReceived: (messageReceived: string) => void;
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -52,6 +58,16 @@ const useStore = create<StoreState>((set) => ({
   setPassMatch: (status: boolean) => set((state) => ({
     passMatch: status 
   })),
+
+  message: "",
+  setMessage: (message: string) => set((state) => ({
+    ...state, message
+  })),
+
+  messageReceived: "",
+  setMessageReceived: (messageReceived: string) => set((state) => ({
+    ...state, messageReceived
+  }))
 
 }));
 

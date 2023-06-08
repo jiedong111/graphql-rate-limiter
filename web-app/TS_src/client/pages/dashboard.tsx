@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useStore from '../store';
 import Navbar from '../components/Navbar';
+import SocketIoTest from '../components/SocketIoTest';
 
 const Dashboard: React.FC<{}> = () => {
   const { showLogin, showRegistration } = useStore();
@@ -11,6 +12,7 @@ const Dashboard: React.FC<{}> = () => {
       <Navbar />
       <div>
         <h1>Dashboard!</h1>
+        <SocketIoTest />
       </div>
     </>
     
